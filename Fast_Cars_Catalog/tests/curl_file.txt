@@ -1,0 +1,8 @@
+GET /v1/carsdetails/requests/getcars HTTP/1.1
+Host: 127.0.0.1:8000
+
+GET /v1/carsdetails/requests/getcarsbypage?page=2&size=5 HTTP/1.1
+Host: 127.0.0.1:8000
+
+GET /v1/carsdetails/requests/getcarsbypagebymultisort?sort_by=brand,price&sort_direction=asc,desc HTTP/1.1
+Host: 127.0.0.1:8000
