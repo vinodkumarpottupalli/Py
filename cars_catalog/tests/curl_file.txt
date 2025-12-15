@@ -1,0 +1,28 @@
+curl http://127.0.0.1:5000/v1/carsdetails/requests/getcars
+
+curl http://127.0.0.1:5000/v1/carsdetails/requests/getcarsbypage?brand=ford
+
+curl 'http://127.0.0.1:5000/v1/carsdetails/requests/getcarsbypage?model=7'
+
+curl 'http://127.0.0.1:5000/v1/carsdetails/requests/getcarsbypage?model=%7%'
+
+curl 'http://127.0.0.1:5000/v1/carsdetails/requests/getcarsbypage?brand=bmw&transmission=auto'
+
+curl 'http://127.0.0.1:5000/v1/carsdetails/requests/getcarsbypage?price_operator=lte&price=50000'
+
+curl 'http://127.0.0.1:5000/v1/carsdetails/requests/getcarsbypage?price_operator=lte&price=50000&page=2&size=20'
+
+curl 'http://127.0.0.1:5000/v1/carsdetails/requests/getcarsbypage?price_operator=between&price=30000&price_max=60000&brand=honda&size=5'
+
+curl 'http://127.0.0.1:5000/v1/carsdetails/requests/getcarsbypage?model=7'
+
+curl 'http://127.0.0.1:5000/v1/carsdetails/requests/getcarsbypage?brand=bmw&transmission=auto'
+
+curl 'http://127.0.0.1:5000/v1/carsdetails/requests/getcarsbypage?sort_by=price&size=5&page=1'
+
+curl 'http://127.0.0.1:5000/v1/carsdetails/requests/getcarsbypage?sort_by=price&size=5&page=20'
+
+curl 'http://127.0.0.1:5000/v1/carsdetails/requests/getcarsbypage?sort_by=price&sort_direction=desc&size=5&page=1'
+
+
+curl 'http://127.0.0.1:5000/v1/carsdetails/requests/getcarsbypagebymultisort?brand=honda&sort_by=release_year,price&sort_direction=desc,asc&size=5&page=1'

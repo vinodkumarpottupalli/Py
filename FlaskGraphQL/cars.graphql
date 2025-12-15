@@ -1,0 +1,59 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Car {
+    car_id	    : String!
+    brand	    : String!
+    model	    : String!
+    transmission    : String!
+    price           : Int
+    release_year    : Int
+    description     : String
+    engine          : Engine		
+    features        : [Feature!]
+}
+
+type Engine {
+    engine_id    : String!
+    name	     : String!
+    capacity_cc  : Int
+	horsepower   : Int
+	torque       : Int
+}
+
+type Feature {
+    feature_id		: String!
+    name		: String!
+    installation_price	: Int
+}
+
+type MutationEngineResponse {
+    success   : Boolean
+    engine_id : String
+}
+
+type MutationCarResponse {
+    success   : Boolean
+    car_id    : String
+}
+
+
+input FeatureInput {
+    name		: String!
+    installation_price	: Int!
+}
+
+
+type Query {
+    find_cars			     : [Car!]	
+    find_car_by_id(car_id: String!)  : Car
+    find_engine_by_id(engine_id: String!) : Engine
+}
+
+type Mutation {
+    create_engine(name: String!, capacity_cc: Int, horsepower: Int, torque: Int) : MutationEngineResponse!    
+    create_car(brand: String!, model: String!, transmission: String!, price: Int, release_year: Int, description: String, engine_id: String, features: [FeatureInput!]) : MutationCarResponse!
+    delete_car_by_id(car_id: String!) : MutationCarResponse!
+}
